@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "sonner";
@@ -7,7 +6,7 @@ import Leaderboard from "@/components/Leaderboard";
 import PredictionForm from "@/components/PredictionForm";
 import { CompoundEntry, MarvinEditorRef } from "@/types";
 import { mockLeaderboard, predictIC50 } from "@/utils/mockData";
-import { Beaker, Flask, Braces, Trophy } from "lucide-react";
+import { Beaker, Braces, Trophy } from "lucide-react";
 
 const Index = () => {
   const [currentSmiles, setCurrentSmiles] = useState<string | null>(null);
@@ -18,7 +17,6 @@ const Index = () => {
   
   const handleStructureChange = (smiles: string | null) => {
     setCurrentSmiles(smiles);
-    // Reset prediction when structure changes
     setPredictedIC50(null);
   };
   
@@ -53,7 +51,6 @@ const Index = () => {
     setLeaderboardEntries([...leaderboardEntries, newEntry]);
     toast.success(`Compound submitted by ${nickname}!`);
     
-    // Reset after submission
     if (marvinEditorRef.current) {
       marvinEditorRef.current.clear();
     }
@@ -65,7 +62,7 @@ const Index = () => {
     <div className="min-h-screen py-8 px-4 sm:px-6 container cyber-grid-bg">
       <header className="text-center mb-10">
         <div className="inline-flex items-center gap-3 mb-4">
-          <Flask className="text-cyber-accent animate-pulse-glow size-8" />
+          <Beaker className="text-cyber-accent animate-pulse-glow size-8" />
           <h1 className="cyber-title text-4xl sm:text-5xl">
             CyberChem<span className="text-foreground">Lab</span>
           </h1>
