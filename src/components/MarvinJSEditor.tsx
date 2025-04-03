@@ -41,14 +41,19 @@ const MarvinJSEditor = forwardRef<MarvinEditorRef, MarvinJSEditorProps>(
       document.body.appendChild(marvinEditorScript);
 
       return () => {
-        document.body.removeChild(script);
-        document.body.removeChild(marvinScript);
-        document.body.removeChild(marvinEditorScript);
+        try {
+          document.body.removeChild(script);
+          document.body.removeChild(marvinScript);
+          document.body.removeChild(marvinEditorScript);
+        } catch (error) {
+          // Handle the case where elements might already be removed
+          console.log("Cleanup error:", error);
+        }
       };
     }, []);
 
     const initializeMarvin = () => {
-      if (!containerRef.current || !window.MarvinJSUtil || sketcherInitialized.current) return;
+      if (!containerRef.current || typeof window.MarvinJSUtil === 'undefined' || sketcherInitialized.current) return;
       
       try {
         sketcherInitialized.current = true;
