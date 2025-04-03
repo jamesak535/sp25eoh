@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,11 +63,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				cyber: {
-					base: '#1A1F2C',
-					accent: '#1EAEDB',
-					dark: '#221F26',
-					light: '#6FDFFF',
-					glow: '#0FA0CE'
+					base: '#13294B',
+					accent: '#ff5f05',
+					dark: '#0c1a30',
+					light: '#ff8040',
+					glow: '#ff5f05'
 				}
 			},
 			borderRadius: {
@@ -95,10 +94,10 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 5px 0 rgba(30, 174, 219, 0.5)'
+						boxShadow: '0 0 5px 0 rgba(255, 95, 5, 0.5)'
 					},
 					'50%': { 
-						boxShadow: '0 0 20px 3px rgba(30, 174, 219, 0.7)'
+						boxShadow: '0 0 20px 3px rgba(255, 95, 5, 0.7)'
 					}
 				},
 				'flicker': {
@@ -117,11 +116,11 @@ export default {
 				'flicker': 'flicker 6s linear infinite'
 			},
 			backgroundImage: {
-				'cyber-grid': 'linear-gradient(rgba(30, 174, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 174, 219, 0.1) 1px, transparent 1px)',
-				'cyber-gradient': 'linear-gradient(180deg, #1A1F2C 0%, #151925 100%)'
+				'cyber-grid': 'linear-gradient(rgba(255, 95, 5, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 95, 5, 0.1) 1px, transparent 1px)',
+				'cyber-gradient': 'linear-gradient(180deg, #13294B 0%, #0c1a30 100%)'
 			},
 			boxShadow: {
-				'cyber': '0 0 10px rgba(30, 174, 219, 0.7)'
+				'cyber': '0 0 10px rgba(255, 95, 5, 0.7)'
 			}
 		}
 	},

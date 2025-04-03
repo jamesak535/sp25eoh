@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 217 74% 18%;    /* Based on Illini Blue */
+    --foreground: 24 100% 97%;    /* Light text for contrast */
 
-    --card: 223 47% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 217 74% 15%;          /* Slightly darker Illini Blue */
+    --card-foreground: 24 100% 97%;
 
-    --popover: 223 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 217 74% 18%;
+    --popover-foreground: 24 100% 97%;
 
-    --primary: 196 72% 49%;
+    --primary: 24 100% 51%;       /* Illini Orange */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 196 80% 79%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 24 80% 70%;      /* Lighter Illini Orange */
+    --secondary-foreground: 217 74% 18%;
 
-    --muted: 223 30% 20%;
-    --muted-foreground: 215 20% 75%;
+    --muted: 217 30% 30%;         /* Muted Illini Blue */
+    --muted-foreground: 24 20% 85%;
 
-    --accent: 196 72% 49%;
+    --accent: 24 100% 51%;        /* Illini Orange as accent */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 223 30% 20%;
-    --input: 223 30% 20%;
-    --ring: 196 72% 49%;
+    --border: 217 30% 30%;
+    --input: 217 30% 30%;
+    --ring: 24 100% 51%;
 
     --radius: 0.5rem;
 
@@ -53,9 +53,9 @@
 
   body {
     @apply bg-background text-foreground;
-    background-image: linear-gradient(to bottom, rgba(26, 31, 44, 0.97), rgba(26, 31, 44, 0.99)), 
-                      radial-gradient(ellipse at top, rgba(30, 174, 219, 0.15), transparent 70%),
-                      radial-gradient(ellipse at bottom, rgba(30, 174, 219, 0.1), transparent 70%);
+    background-image: linear-gradient(to bottom, rgba(19, 41, 75, 0.97), rgba(19, 41, 75, 0.99)), 
+                      radial-gradient(ellipse at top, rgba(255, 95, 5, 0.15), transparent 70%),
+                      radial-gradient(ellipse at bottom, rgba(255, 95, 5, 0.1), transparent 70%);
     background-attachment: fixed;
     background-size: cover;
   }
@@ -79,7 +79,7 @@
 
 .cyber-title {
   @apply text-cyber-accent font-bold relative;
-  text-shadow: 0 0 5px rgba(30, 174, 219, 0.7);
+  text-shadow: 0 0 5px rgba(255, 95, 5, 0.7);
 }
 
 .cyber-border {
@@ -91,8 +91,8 @@
 }
 
 .cyber-grid-bg {
-  background-image: linear-gradient(rgba(30, 174, 219, 0.05) 1px, transparent 1px), 
-                    linear-gradient(90deg, rgba(30, 174, 219, 0.05) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255, 95, 5, 0.05) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(255, 95, 5, 0.05) 1px, transparent 1px);
   background-size: 20px 20px;
   background-attachment: fixed;
 }
