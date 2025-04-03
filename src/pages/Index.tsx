@@ -7,7 +7,7 @@ import Leaderboard from "@/components/Leaderboard";
 import PredictionForm from "@/components/PredictionForm";
 import { CompoundEntry, MarvinEditorRef } from "@/types";
 import { mockLeaderboard, predictIC50 } from "@/utils/mockData";
-import { Beaker, Flasks, Braces, Trophy } from "lucide-react";
+import { Beaker, Flask, Braces, Trophy } from "lucide-react";
 
 const Index = () => {
   const [currentSmiles, setCurrentSmiles] = useState<string | null>(null);
@@ -65,7 +65,7 @@ const Index = () => {
     <div className="min-h-screen py-8 px-4 sm:px-6 container cyber-grid-bg">
       <header className="text-center mb-10">
         <div className="inline-flex items-center gap-3 mb-4">
-          <Flasks className="text-cyber-accent animate-pulse-glow size-8" />
+          <Flask className="text-cyber-accent animate-pulse-glow size-8" />
           <h1 className="cyber-title text-4xl sm:text-5xl">
             CyberChem<span className="text-foreground">Lab</span>
           </h1>
