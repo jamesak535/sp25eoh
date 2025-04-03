@@ -1,3 +1,4 @@
+
 import { useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "sonner";
@@ -111,6 +112,25 @@ const Index = () => {
           <Leaderboard entries={leaderboardEntries} />
         </div>
       </main>
+      
+      {/* Sponsor section */}
+      <footer className="mt-12 py-4 border-t border-cyber-accent/30">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <p className="text-sm text-muted-foreground">Sponsored by:</p>
+          <div className="flex items-center gap-2">
+            <img 
+              src="/sponsor-logo.png" 
+              alt="Sponsor Logo" 
+              className="h-8 w-auto object-contain"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "https://via.placeholder.com/120x40?text=Your+Logo";
+              }}
+            />
+            <span className="font-medium text-cyber-accent">Your Organization</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
