@@ -114,20 +114,21 @@ const Index = () => {
       </main>
       
       {/* Sponsor section */}
-      <footer className="mt-12 py-4 border-t border-cyber-accent/30">
+      <footer className="mt-12 pt-10 py-4 border-t border-cyber-accent/30">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <p className="text-sm text-muted-foreground">Sponsored by:</p>
-          <div className="flex items-center gap-2">
+          {/* <p className="text-sm text-muted-foreground">Sponsored by:</p> */}
+          <div className="flex items-center gap-6">
             <img 
-              src="/sponsor-logo.png" 
-              alt="Sponsor Logo" 
-              className="h-8 w-auto object-contain"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = "https://via.placeholder.com/120x40?text=Your+Logo";
-              }}
+              src="src/pages/atlas.png" 
+              alt="atlas Logo" 
+              className="h-16 w-auto object-contain"
             />
-            <span className="font-medium text-cyber-accent">Your Organization</span>
+            {/* <span className="font-medium text-cyber-accent mx-2 text-3xl">   </span> */}
+            <img 
+              src="src/pages/uiuc.png" 
+              alt="uiuc Logo" 
+              className="h-16 w-auto object-contain"
+            />
           </div>
         </div>
       </footer>
