@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 223 47% 12%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 223 47% 11%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 231 48% 48%;
+    --primary: 196 72% 49%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 250 46% 90%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 196 80% 79%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 223 30% 20%;
+    --muted-foreground: 215 20% 75%;
 
-    --accent: 243 75% 59%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 196 72% 49%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 231 48% 48%;
+    --border: 223 30% 20%;
+    --input: 223 30% 20%;
+    --ring: 196 72% 49%;
 
     --radius: 0.5rem;
 
@@ -44,44 +44,6 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 231 48% 48%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 250 46% 25%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 243 75% 59%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 231 48% 48%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 }
 
 @layer base {
@@ -91,13 +53,50 @@
 
   body {
     @apply bg-background text-foreground;
+    background-image: linear-gradient(to bottom, rgba(26, 31, 44, 0.97), rgba(26, 31, 44, 0.99)), 
+                      radial-gradient(ellipse at top, rgba(30, 174, 219, 0.15), transparent 70%),
+                      radial-gradient(ellipse at bottom, rgba(30, 174, 219, 0.1), transparent 70%);
+    background-attachment: fixed;
+    background-size: cover;
   }
 }
 
 .marvin-container {
-  @apply w-full h-[500px] border-2 border-border rounded-lg overflow-hidden;
+  @apply w-full h-[500px] border-2 border-cyber-accent/40 rounded-lg overflow-hidden shadow-cyber bg-cyber-base/70 backdrop-blur-sm;
 }
 
 .molecule-preview {
-  @apply w-full max-w-[100px] h-[80px] border border-gray-200 rounded-md overflow-hidden mx-auto;
+  @apply w-full max-w-[100px] h-[80px] border border-cyber-accent/30 bg-cyber-base/50 rounded-md overflow-hidden mx-auto;
+}
+
+.cyber-panel {
+  @apply bg-cyber-base/80 backdrop-blur-sm border border-cyber-accent/30 rounded-lg p-6 shadow-cyber;
+}
+
+.cyber-input {
+  @apply bg-cyber-dark/70 border border-cyber-accent/30 text-foreground focus:border-cyber-accent focus:ring-1 focus:ring-cyber-accent;
+}
+
+.cyber-title {
+  @apply text-cyber-accent font-bold relative;
+  text-shadow: 0 0 5px rgba(30, 174, 219, 0.7);
+}
+
+.cyber-border {
+  @apply border border-cyber-accent/40 rounded-md;
+}
+
+.cyber-card {
+  @apply bg-cyber-base/70 backdrop-blur-sm rounded-lg border border-cyber-accent/30 overflow-hidden transition-all duration-300 hover:border-cyber-accent/60 hover:shadow-cyber;
+}
+
+.cyber-grid-bg {
+  background-image: linear-gradient(rgba(30, 174, 219, 0.05) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(30, 174, 219, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-attachment: fixed;
+}
+
+.glow-effect {
+  @apply animate-pulse-glow;
 }

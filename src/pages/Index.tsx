@@ -7,6 +7,7 @@ import Leaderboard from "@/components/Leaderboard";
 import PredictionForm from "@/components/PredictionForm";
 import { CompoundEntry, MarvinEditorRef } from "@/types";
 import { mockLeaderboard, predictIC50 } from "@/utils/mockData";
+import { Beaker, Flasks, Braces, Trophy } from "lucide-react";
 
 const Index = () => {
   const [currentSmiles, setCurrentSmiles] = useState<string | null>(null);
@@ -50,6 +51,7 @@ const Index = () => {
     };
     
     setLeaderboardEntries([...leaderboardEntries, newEntry]);
+    toast.success(`Compound submitted by ${nickname}!`);
     
     // Reset after submission
     if (marvinEditorRef.current) {
@@ -60,36 +62,42 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen py-8 px-4 sm:px-6 container">
+    <div className="min-h-screen py-8 px-4 sm:px-6 container cyber-grid-bg">
       <header className="text-center mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-          ChemDraw IC50 Predictor
-        </h1>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          Draw a chemical compound structure and predict its IC50 value. 
-          Compete with others to design the most potent compounds!
+        <div className="inline-flex items-center gap-3 mb-4">
+          <Flasks className="text-cyber-accent animate-pulse-glow size-8" />
+          <h1 className="cyber-title text-4xl sm:text-5xl">
+            CyberChem<span className="text-foreground">Lab</span>
+          </h1>
+          <Beaker className="text-cyber-accent animate-pulse-glow size-8" />
+        </div>
+        <p className="text-muted-foreground max-w-2xl mx-auto bg-cyber-base/50 backdrop-blur-sm px-4 py-2 rounded-md border border-cyber-accent/20">
+          Design molecular compounds and predict their IC50 values in our virtual laboratory.
+          <br />Compete with other scientists to create the most potent structures!
         </p>
       </header>
       
       <main className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="md:col-span-2">
-          <h2 className="text-xl font-semibold mb-4">Draw Your Compound</h2>
+        <div className="md:col-span-2 cyber-panel">
+          <div className="flex items-center mb-4 border-b border-cyber-accent/30 pb-2">
+            <Braces className="text-cyber-accent mr-2" />
+            <h2 className="text-xl font-semibold">Molecular Designer</h2>
+          </div>
+          
           <MarvinJSEditor 
             ref={marvinEditorRef}
             onStructureChange={handleStructureChange} 
           />
           
-          <div className="mt-4">
-            {currentSmiles && (
-              <div className="bg-secondary/30 p-3 rounded-md">
-                <p className="text-sm font-semibold mb-1">Current SMILES:</p>
-                <p className="font-mono text-xs break-all">{currentSmiles}</p>
-              </div>
-            )}
-          </div>
+          {currentSmiles && (
+            <div className="mt-4 bg-cyber-dark/50 p-3 rounded-md border border-cyber-accent/30">
+              <p className="text-sm font-semibold mb-1 text-cyber-accent">SMILES Notation:</p>
+              <p className="font-mono text-xs break-all bg-cyber-dark/80 p-2 rounded">{currentSmiles}</p>
+            </div>
+          )}
         </div>
         
-        <div className="space-y-6">
+        <div className="cyber-panel space-y-6">
           <PredictionForm 
             onSubmit={handleSubmit}
             onPredict={handlePredict}
@@ -98,7 +106,11 @@ const Index = () => {
           />
         </div>
         
-        <div className="md:col-span-3">
+        <div className="md:col-span-3 cyber-panel">
+          <div className="flex items-center mb-4 border-b border-cyber-accent/30 pb-2">
+            <Trophy className="text-cyber-accent mr-2" />
+            <h2 className="text-xl font-semibold">Research Leaderboard</h2>
+          </div>
           <Leaderboard entries={leaderboardEntries} />
         </div>
       </main>

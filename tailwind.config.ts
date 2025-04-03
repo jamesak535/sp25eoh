@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cyber: {
+					base: '#1A1F2C',
+					accent: '#1EAEDB',
+					dark: '#221F26',
+					light: '#6FDFFF',
+					glow: '#0FA0CE'
 				}
 			},
 			borderRadius: {
@@ -84,11 +92,36 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px 0 rgba(30, 174, 219, 0.5)'
+					},
+					'50%': { 
+						boxShadow: '0 0 20px 3px rgba(30, 174, 219, 0.7)'
+					}
+				},
+				'flicker': {
+					'0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
+						opacity: '0.99'
+					},
+					'20%, 21.999%, 63%, 63.999%, 65%, 69.999%': {
+						opacity: '0.4'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'flicker': 'flicker 6s linear infinite'
+			},
+			backgroundImage: {
+				'cyber-grid': 'linear-gradient(rgba(30, 174, 219, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 174, 219, 0.1) 1px, transparent 1px)',
+				'cyber-gradient': 'linear-gradient(180deg, #1A1F2C 0%, #151925 100%)'
+			},
+			boxShadow: {
+				'cyber': '0 0 10px rgba(30, 174, 219, 0.7)'
 			}
 		}
 	},
