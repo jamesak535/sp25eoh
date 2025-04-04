@@ -1,0 +1,17 @@
+[
+  {
+    "nickname": "enter your nicname",
+    "smiles": "CCCCCCCCCC",
+    "ic50": 50.687375754202925
+  },
+  {
+    "nickname": "adf",
+    "smiles": "CCCCCCCCCCCCC(CCCCC(CC1CCCCC1)C1CCCCC1)C1CCCCC1",
+    "ic50": 32.71967336127645
+  },
+  {
+    "nickname": "qwer",
+    "smiles": "CCCCCC(O)C(C)CCC",
+    "ic50": 49.68496486521022
+  }
+]
