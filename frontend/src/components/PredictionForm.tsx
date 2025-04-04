@@ -104,7 +104,7 @@ const PredictionForm = ({
               </Button>
 
               <div className="flex items-center justify-center flex-1 h-10 px-3 bg-muted rounded-md font-mono">
-                {predictedIC50 !== null ? `${predictedIC50.toFixed(2)} μM` : "-- μM"}
+                {predictedIC50 !== null ? `${predictedIC50.toFixed(1)} μM` : "-- μM"}
               </div>
             </div>
           </div>

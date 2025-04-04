@@ -113,7 +113,7 @@ const Index = () => {
         setLeaderboardEntries(updated.leaderboard);
       }
 
-      toast.success(`👏 ${nickname}'s super formula has been submitted!`);
+      toast.success(`👏 ${nickname}의 구조가 제출되었습니다!`);
       marvinEditorRef.current?.clear();
       setCurrentSmiles(null);
       setPredictedIC50(null);
@@ -139,26 +139,35 @@ const Index = () => {
         </p>
       </header>
 
-      <main className="flex flex-col gap-6">
-  {/* Top row: Molecule Maker + Submission Form */}
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    {/* Molecule Maker (Left side - 2 columns) */}
-    <div className="md:col-span-2">
-      <div className="cyber-panel">
-        <div className="flex items-center mb-4 border-b border-cyber-accent/30 pb-2">
-          <h2 className="text-xl font-semibold">🔧 Molecule Maker 3000</h2>
-        </div>
-
-        <MarvinJSEditor
-          ref={marvinEditorRef}
-          onStructureChange={handleStructureChange}
-        />
+      <main className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {/* 왼쪽 2칸 전체 묶음 */}
+  <div className="md:col-span-2 flex flex-col gap-6">
+    {/* Marvin Editor */}
+    <div className="cyber-panel">
+      <div className="flex items-center mb-4 border-b border-cyber-accent/30 pb-2">
+        {/* <Braces className="text-cyber-accent mr-2" /> */}
+        <h2 className="text-xl font-semibold">🔧 Molecule Maker 3000</h2>
       </div>
+
+      <MarvinJSEditor
+        ref={marvinEditorRef}
+        onStructureChange={handleStructureChange}
+      />
     </div>
 
-    {/* Submission Form (Right side - 1 column) */}
-    <div className="md:col-span-1">
-      <div className="cyber-panel h-full">
+    {/* SMILES Notation */}
+    {currentSmiles && (
+      <div className="bg-cyber-dark/50 p-4 rounded-md border border-cyber-accent/30">
+        <p className="text-sm font-semibold mb-1 text-cyber-accent">SMILES Notation:</p>
+        <p className="font-mono text-xs break-all bg-cyber-dark/80 p-2 rounded">
+          {currentSmiles}
+        </p>
+      </div>
+    )}
+
+    {/* Submit + 설명칸 */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="cyber-panel">
         <PredictionForm
           onSubmit={handleSubmit}
           onPredict={handlePredict}
@@ -166,32 +175,24 @@ const Index = () => {
           predictedIC50={predictedIC50}
         />
       </div>
+
+      <div className="cyber-panel flex items-center justify-center text-center">
+        <div className="text-muted-foreground">
+          <p className="font-semibold text-base mb-2">MegaVirus just mutated! Your cures must be even stronger.</p>
+          <p className="text-sm">Think fast, design faster and scan the formula!</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  {/* Middle row: SMILES Notation */}
-  {currentSmiles && (
-    <div className="bg-cyber-dark/50 p-4 rounded-md border border-cyber-accent/30">
-      <p className="text-sm font-semibold mb-1 text-cyber-accent">SMILES Notation:</p>
-      <p className="font-mono text-xs break-all bg-cyber-dark/80 p-2 rounded">
-        {currentSmiles}
-      </p>
-    </div>
-  )}
-
-  {/* Bottom row: Hero Rankings */}
-  <div className="cyber-panel">
-    <div className="flex items-center mb-4 border-b border-cyber-accent/30 pb-2">
-      <h2 className="text-xl font-semibold">🌍 Hero Rankings</h2>
-    </div>
-    <Leaderboard entries={leaderboardEntries} />
-  </div>
-
-  {/* Information panel - optional */}
-  <div className="cyber-panel mt-4">
-    <div className="text-muted-foreground text-center">
-      <p className="font-semibold text-base mb-2">MegaVirus just mutated! Your cures must be even stronger.</p>
-      <p className="text-sm">Think fast, design faster and scan the formula!</p>
+  {/* 오른쪽 1칸: Leaderboard (전체 세로 고정) */}
+  <div className="md:col-span-1 h-full">
+    <div className="cyber-panel h-full flex flex-col">
+      <div className="flex items-center mb-4 border-b border-cyber-accent/30 pb-2">
+        {/* <Trophy className="text-cyber-accent mr-2" /> */}
+        <h2 className="text-xl font-semibold">🌍 Hero Rankings</h2>
+      </div>
+      <Leaderboard entries={leaderboardEntries} />
     </div>
   </div>
 </main>
