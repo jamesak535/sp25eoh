@@ -36,7 +36,7 @@ const PredictionForm = ({
     try {
       setIsPredicting(true);
       await onPredict();
-      toast.success("Prediction complete!");
+      toast.success("🔬 Cure Scan Complete");
     } catch (error) {
       toast.error("Failed to predict IC50 value");
       console.error(error);
@@ -71,22 +71,22 @@ const PredictionForm = ({
   return (
     <Card className="w-full mt-6">
       <CardHeader>
-        <CardTitle className="text-xl">Submit Your Compound</CardTitle>
+        <CardTitle className="text-xl">✨ Submit Your Super Formula</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="flex flex-col space-y-2">
-            <Label htmlFor="nickname">Your Nickname</Label>
+            <Label htmlFor="nickname">🧙 Hero Alias</Label>
             <Input
               id="nickname"
-              placeholder="Enter your nickname"
+              placeholder="Enter your hero name"
               value={nickname}
               onChange={(e) => setNickname(e.target.value)}
             />
           </div>
 
           <div className="space-y-2">
-            <Label>Predicted IC50 Value</Label>
+            <Label>Smaller Score, Stronger Cure!</Label>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 type="button"
@@ -100,11 +100,11 @@ const PredictionForm = ({
                   pointerEvents: "auto"
                 }}
               >
-                {isPredicting ? "Predicting..." : "Predict IC50 Value"}
+                {isPredicting ? "Predicting..." : "🔮 Scan Cure Power"}
               </Button>
 
               <div className="flex items-center justify-center flex-1 h-10 px-3 bg-muted rounded-md font-mono">
-                {predictedIC50 !== null ? `${predictedIC50} μM` : "-- μM"}
+                {predictedIC50 !== null ? `${predictedIC50.toFixed(2)} μM` : "-- μM"}
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@ const PredictionForm = ({
           onClick={handleSubmit}
           disabled={!isStructureValid || predictedIC50 === null}
         >
-          Submit to Leaderboard
+          🚀 Join the Hero Rankings
         </Button>
       </CardFooter>
     </Card>

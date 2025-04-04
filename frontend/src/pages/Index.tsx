@@ -134,8 +134,8 @@ const Index = () => {
           <Beaker className="text-cyber-accent animate-pulse-glow size-8" />
         </div>
         <p className="text-muted-foreground max-w-2xl mx-auto bg-cyber-base/50 backdrop-blur-sm px-4 py-2 rounded-md border border-cyber-accent/20">
-          Design molecular compounds and predict their IC50 values in our virtual laboratory.
-          <br />Compete with other scientists to create the most potent structures!
+        The world is under attack by the evil MegaVirus and its nasty gang of Germinators!
+          <br />Only YOU can invent the ultimate cure in our crazy chemical lab.
         </p>
       </header>
 
@@ -145,8 +145,8 @@ const Index = () => {
     {/* Marvin Editor */}
     <div className="cyber-panel">
       <div className="flex items-center mb-4 border-b border-cyber-accent/30 pb-2">
-        <Braces className="text-cyber-accent mr-2" />
-        <h2 className="text-xl font-semibold">Molecular Designer</h2>
+        {/* <Braces className="text-cyber-accent mr-2" /> */}
+        <h2 className="text-xl font-semibold">🔧 Molecule Maker 3000</h2>
       </div>
 
       <MarvinJSEditor
@@ -178,8 +178,8 @@ const Index = () => {
 
       <div className="cyber-panel flex items-center justify-center text-center">
         <div className="text-muted-foreground">
-          <p className="font-semibold text-base mb-2">🧪 3번까지 도전 가능!</p>
-          <p className="text-sm">좀 되주세요 🔬</p>
+          <p className="font-semibold text-base mb-2">MegaVirus just mutated! Your cures must be even stronger.</p>
+          <p className="text-sm">Think fast, design faster and scan the formula!</p>
         </div>
       </div>
     </div>
@@ -189,8 +189,8 @@ const Index = () => {
   <div className="md:col-span-1 h-full">
     <div className="cyber-panel h-full flex flex-col">
       <div className="flex items-center mb-4 border-b border-cyber-accent/30 pb-2">
-        <Trophy className="text-cyber-accent mr-2" />
-        <h2 className="text-xl font-semibold">Research Leaderboard</h2>
+        {/* <Trophy className="text-cyber-accent mr-2" /> */}
+        <h2 className="text-xl font-semibold">🌍 Hero Rankings</h2>
       </div>
       <Leaderboard entries={leaderboardEntries} />
     </div>

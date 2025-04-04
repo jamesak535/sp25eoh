@@ -35,7 +35,7 @@ const Leaderboard = ({ entries }: LeaderboardProps) => {
         <CardTitle className="text-xl flex items-center justify-between">
           <span>Leaderboard</span>
           <Badge variant="outline" className="font-normal">
-            {entries.length} Compounds
+            {entries.length} Heros Ready
           </Badge>
         </CardTitle>
       </CardHeader>
@@ -44,8 +44,8 @@ const Leaderboard = ({ entries }: LeaderboardProps) => {
           <TableHeader>
             <TableRow>
               <TableHead className="w-12">Rank</TableHead>
-              <TableHead>Nickname</TableHead>
-              <TableHead className="text-right">IC50 (μM)</TableHead>
+              <TableHead className="w-40 overflow-hidden whitespace-nowrap">Hero name</TableHead>
+              <TableHead className="text-right">Cure Power (μM)</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -60,7 +60,7 @@ const Leaderboard = ({ entries }: LeaderboardProps) => {
       </TableCell>
       <TableCell>{entry.nickname}</TableCell>
       <TableCell className="text-right font-mono">
-        {entry.ic50}
+        {entry.ic50.toFixed(3)}
       </TableCell>
     </TableRow>
   ))}
