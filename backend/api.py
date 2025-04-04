@@ -61,16 +61,16 @@ def save_leaderboard(data):
 @app.route("/submit-score", methods=["POST"])
 def submit_score():
     data = request.get_json()
-    name = data.get("name")
+    nickname = data.get("nickname")
     smiles = data.get("smiles")
     ic50 = data.get("ic50")
 
-    if not name or not smiles or ic50 is None:
+    if not nickname or not smiles or ic50 is None:
         return jsonify({"error": "Missing required fields"}), 400
 
     leaderboard = load_leaderboard()
     leaderboard.append({
-        "name": name,
+        "nickname": nickname,
         "smiles": smiles,
         "ic50": ic50
     })

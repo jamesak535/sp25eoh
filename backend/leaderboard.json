@@ -13,5 +13,25 @@
     "nickname": "qwer",
     "smiles": "CCCCCC(O)C(C)CCC",
     "ic50": 49.68496486521022
+  },
+  {
+    "name": "24",
+    "smiles": "CCCCCCC",
+    "ic50": 54.395952353984654
+  },
+  {
+    "nnickname": "24",
+    "smiles": "CCCCCCC",
+    "ic50": 54.395952353984654
+  },
+  {
+    "nickname": "234",
+    "smiles": "CCCCCCCCCCCCCC",
+    "ic50": 48.97010895540497
+  },
+  {
+    "nickname": "sextv",
+    "smiles": "CCCCCCCCCCC(CCC(CCCCC)CCCCCC)CC(c1ccc(-c2ccc(-c3ccccc3)cc2)cc1)C(CCC)c1ccccc1",
+    "ic50": 39.63748671740527
   }
 ]

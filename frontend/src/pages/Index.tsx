@@ -96,6 +96,11 @@ const Index = () => {
   
 
   const handleSubmit = async (nickname: string) => {
+    console.log("🚀 제출할 데이터:", {
+      nickname,
+      currentSmiles,
+      predictedIC50,
+    });
     if (!currentSmiles || predictedIC50 === null) return;
 
     try {

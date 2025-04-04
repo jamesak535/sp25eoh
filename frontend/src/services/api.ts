@@ -40,7 +40,8 @@ export const api = {
     }
   },
 
-  async submitScore(name: string, smiles: string, ic50: string): Promise<ApiResponse<{ message: string; leaderboard: any[] }>> {
+  // 🔥 여기 수정 (ic50을 number 타입으로)
+  async submitScore(name: string, smiles: string, ic50: number): Promise<ApiResponse<{ message: string; leaderboard: any[] }>> {
     try {
       const response = await fetch(`${API_BASE_URL}/submit-score`, {
         method: 'POST',
@@ -65,4 +66,4 @@ export const api = {
       return { error: 'Failed to fetch leaderboard' };
     }
   },
-}; 
+};
