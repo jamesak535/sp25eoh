@@ -6,9 +6,11 @@ import Leaderboard from "@/components/Leaderboard";
 import PredictionForm from "@/components/PredictionForm";
 import { CompoundEntry, MarvinEditorRef } from "@/types";
 import { predictFromMol, submitToLeaderboard, getLeaderboard } from "@/lib/api";
+
 import { Beaker, Braces, Trophy } from "lucide-react";
 import atlasLogo from "./atlas.png"
 import uiucLogo from "./uiuc.png"
+import { config } from "../config.ts"
 
 const Index = () => {
   const [currentSmiles, setCurrentSmiles] = useState<string | null>(null);
@@ -29,6 +31,14 @@ const Index = () => {
       }
     };
     fetchLeaderboard();
+
+    // Set up interval to fetch every second
+    const intervalId = setInterval(fetchLeaderboard, 1000);
+    
+    // Clean up the interval when component unmounts
+    return () => clearInterval(intervalId);
+
+
   }, []);
 
   const handleStructureChange = async (mol: string | null) => {
@@ -39,7 +49,7 @@ const Index = () => {
   
     // Flask 서버로 mol 전송 → SMILES 변환 요청
     try {
-      const res = await fetch("http://127.0.0.1:5001/mol-to-smiles", {
+      const res = await fetch("http://10.195.29.214:5001/mol-to-smiles", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mol })
@@ -69,7 +79,7 @@ const Index = () => {
   
     try {
       // ✅ 백엔드에 mol과 smiles 둘 다 전송
-      const response = await fetch("http://127.0.0.1:5001/mol-to-smiles", {
+      const response = await fetch("http://10.195.29.214:5001/mol-to-smiles", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

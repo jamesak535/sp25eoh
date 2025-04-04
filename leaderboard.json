@@ -1,37 +1,32 @@
 [
   {
-    "nickname": "\ub098\ub3c4 \ubab0\u314f \uc2ed\u314f",
-    "smiles": "CCCCCCCCC",
-    "ic50": 0.1
+    "nickname": "ff",
+    "smiles": "CCCCCCCCCCCCC",
+    "ic50": 47.32113488675665
   },
   {
-    "nickname": "tdddddd",
-    "smiles": "CCCCCCCCCCC",
-    "ic50": 48.53798490599391
-  },
-  {
-    "nickname": "ddd",
+    "nickname": "tlqkf",
     "smiles": "CCCCCCCCCC",
-    "ic50": 50.687375754202925
+    "ic50": 50.68737575420303
   },
   {
-    "nickname": "\uc548\ub155",
-    "smiles": "CCCCCCCCCCCCCC",
-    "ic50": 48.97010895540497
+    "nickname": "daemool",
+    "smiles": "CCC(C1CCCC1)C1CCCC1",
+    "ic50": 47.182739424848
   },
   {
-    "nickname": "\u3147\u3147\u3147",
-    "smiles": "CCCCCCCCCCC",
+    "nickname": "Qaaw",
+    "smiles": "CCC(CC)CC",
+    "ic50": 47.745007699062384
+  },
+  {
+    "nickname": "jun",
+    "smiles": "CC",
+    "ic50": 59.025946010182906
+  },
+  {
+    "nickname": "dksdjfwef",
+    "smiles": "CCCCCCCCCCCC",
     "ic50": 48.53798490599391
-  },
-  {
-    "nickname": "\uc2dc\ubc1c",
-    "smiles": "CCCCCCCCCCCCCCCCCCCCC",
-    "ic50": 46.36272790490416
-  },
-  {
-    "nickname": "\u3148\u3139\u3148\u3137\u3139\u3148",
-    "smiles": "CCCCCCCCCCCCCC.CCCCCCCCCCCCCCC.c1ccccc1",
-    "ic50": 52.04701399592092
   }
 ]

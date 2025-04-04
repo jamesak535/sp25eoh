@@ -45,22 +45,30 @@ const Leaderboard = ({ entries }: LeaderboardProps) => {
             <TableRow>
               <TableHead className="w-12">Rank</TableHead>
               <TableHead className="w-40 overflow-hidden whitespace-nowrap">Hero name</TableHead>
+              <TableHead className="pl-6">SMILES</TableHead>
               <TableHead className="text-right">Cure Power (μM)</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
   {sortedEntries.map((entry, index) => (
     <TableRow key={entry.id}>
-      <TableCell className="font-medium">
+      <TableCell className="font-medium text-center">
         {index === 0 ? (
-          <Badge className="bg-yellow-400 hover:bg-yellow-500">🏆</Badge>
+          <Badge className="bg-yellow-500 hover:bg-yellow-600 text-base px-3 py -1">🥇</Badge>
+        ) : index === 1 ? (
+          <Badge className="bg-gray-300 hover:bg-gray-400 text-gray-800 text-base px-3 py -1">🥈</Badge>
+        ) : index === 2 ? (
+          <Badge className="bg-amber-600 hover:bg-amber-700 text-base px-3 py -1">🥉</Badge>
         ) : (
           <span>{index + 1}</span>
         )}
       </TableCell>
       <TableCell>{entry.nickname}</TableCell>
+      <TableCell className="max-w-[200px] break-words pl-6">
+        <span className="font-mono text-xs">{entry.smiles}</span>
+      </TableCell>
       <TableCell className="text-right font-mono">
-        {entry.ic50.toFixed(3)}
+        {entry.ic50.toFixed(5)}
       </TableCell>
     </TableRow>
   ))}

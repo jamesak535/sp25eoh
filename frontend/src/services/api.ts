@@ -1,6 +1,11 @@
 import { config } from '../config';
 
-const API_BASE_URL = config.api.baseUrl;
+// const API_BASE_URL = config.api.baseUrl;
+
+// At the top of api.ts, add this line
+console.log('API BASE URL is:', 'http://YOUR_ACTUAL_IP:5001');
+
+const API_BASE_URL = 'http://10.195.29.214:5001';
 
 export interface ApiResponse<T> {
   data?: T;
@@ -41,29 +46,68 @@ export const api = {
   },
 
   // 🔥 여기 수정 (ic50을 number 타입으로)
-  async submitScore(name: string, smiles: string, ic50: number): Promise<ApiResponse<{ message: string; leaderboard: any[] }>> {
+  // async submitScore(nickname: string, smiles: string, ic50: number): Promise<ApiResponse<{ message: string; leaderboard: any[] }>> {
+  //   try {
+  //     const response = await fetch(`${API_BASE_URL}/submit-score`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ nickname, smiles, ic50 }),
+  //     });
+  //     const data = await response.json();
+  //     return { data };
+  //   } catch (error) {
+  //     return { error: 'Failed to submit score' };
+  //   }
+  // },
+
+  async submitScore(nickname: string, smiles: string, ic50: number): Promise<ApiResponse<{ message: string; leaderboard: any[] }>> {
     try {
       const response = await fetch(`${API_BASE_URL}/submit-score`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, smiles, ic50 }),
+        body: JSON.stringify({ nickname, smiles, ic50 }),
       });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('API error:', errorData);
+        return { error: errorData.error || 'Failed to submit score' };
+      }
+      
       const data = await response.json();
       return { data };
     } catch (error) {
+      console.error('Submit error:', error);
       return { error: 'Failed to submit score' };
     }
   },
 
+
+  // async getLeaderboard(): Promise<ApiResponse<{ leaderboard: any[] }>> {
+  //   try {
+  //     const response = await fetch(`${API_BASE_URL}/leaderboard`);
+  //     const data = await response.json();
+  //     return { data };
+  //   } catch (error) {
+  //     return { error: 'Failed to fetch leaderboard' };
+  //   }
+  // },
+
   async getLeaderboard(): Promise<ApiResponse<{ leaderboard: any[] }>> {
     try {
+      console.log('Attempting to fetch from:', API_BASE_URL + '/leaderboard');
       const response = await fetch(`${API_BASE_URL}/leaderboard`);
+      console.log('Response status:', response.status);
       const data = await response.json();
       return { data };
     } catch (error) {
+      console.error('Detailed fetch error:', error);
       return { error: 'Failed to fetch leaderboard' };
     }
-  },
+  }
+
 };
