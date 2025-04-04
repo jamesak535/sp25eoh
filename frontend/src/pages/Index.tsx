@@ -6,11 +6,12 @@ import Leaderboard from "@/components/Leaderboard";
 import PredictionForm from "@/components/PredictionForm";
 import { CompoundEntry, MarvinEditorRef } from "@/types";
 import { predictFromMol, submitToLeaderboard, getLeaderboard } from "@/lib/api";
-
 import { Beaker, Braces, Trophy } from "lucide-react";
 import atlasLogo from "./atlas.png"
 import uiucLogo from "./uiuc.png"
-import { config } from "../config.ts"
+import { config } from '../config';
+
+const API_URL = config.api.baseUrl;
 
 const Index = () => {
   const [currentSmiles, setCurrentSmiles] = useState<string | null>(null);
@@ -49,7 +50,7 @@ const Index = () => {
   
     // Flask 서버로 mol 전송 → SMILES 변환 요청
     try {
-      const res = await fetch("http://10.195.29.214:5001/mol-to-smiles", {
+      const res = await fetch(`${API_URL}/mol-to-smiles`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mol })
@@ -79,7 +80,7 @@ const Index = () => {
   
     try {
       // ✅ 백엔드에 mol과 smiles 둘 다 전송
-      const response = await fetch("http://10.195.29.214:5001/mol-to-smiles", {
+      const response = await fetch(`${API_URL}/mol-to-smiles`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

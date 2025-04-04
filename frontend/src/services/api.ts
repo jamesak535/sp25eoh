@@ -1,11 +1,10 @@
 import { config } from '../config';
 
-// const API_BASE_URL = config.api.baseUrl;
+const API_BASE_URL = config.api.baseUrl;
 
 // At the top of api.ts, add this line
 console.log('API BASE URL is:', 'http://YOUR_ACTUAL_IP:5001');
 
-const API_BASE_URL = 'http://10.195.29.214:5001';
 
 export interface ApiResponse<T> {
   data?: T;

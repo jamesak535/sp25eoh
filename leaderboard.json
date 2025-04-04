@@ -1,32 +1,3 @@
 [
-  {
-    "nickname": "ff",
-    "smiles": "CCCCCCCCCCCCC",
-    "ic50": 47.32113488675665
-  },
-  {
-    "nickname": "tlqkf",
-    "smiles": "CCCCCCCCCC",
-    "ic50": 50.68737575420303
-  },
-  {
-    "nickname": "daemool",
-    "smiles": "CCC(C1CCCC1)C1CCCC1",
-    "ic50": 47.182739424848
-  },
-  {
-    "nickname": "Qaaw",
-    "smiles": "CCC(CC)CC",
-    "ic50": 47.745007699062384
-  },
-  {
-    "nickname": "jun",
-    "smiles": "CC",
-    "ic50": 59.025946010182906
-  },
-  {
-    "nickname": "dksdjfwef",
-    "smiles": "CCCCCCCCCCCC",
-    "ic50": 48.53798490599391
-  }
+ 
 ]
