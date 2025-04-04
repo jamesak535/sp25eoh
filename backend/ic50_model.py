@@ -1,8 +1,9 @@
 from ic50_predictor_class import SMILEStoIC50Predictor
 import joblib
 
-model = joblib.load('ic50_model.pkl')
+# model = joblib.load('ic50_model.pkl')
 
+model = joblib.load('backend/ic50_model.pkl')
 def predict_ic50(smiles: str) -> float:
     try:
         preds, _ = model.predict([smiles])
