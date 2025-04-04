@@ -16,6 +16,12 @@ npm i
 npm run dev
 ```
 
+How to HOST the game:
+1. Make sure the replace "YOUR_IP" in frontend/src/config.ts with your ip address
+2. run "python backend/api.py"
+3. run "cd frontend && npm run dev -- --host"
+
+
 ## What technologies are used for this project?
 
 This project is built with:

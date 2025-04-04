@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>IC₅₀ 예측기</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    input[type="file"] {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #008cba;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #006c94;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔬 이미지로 IC₅₀ 예측하기</h1>
+
+  <input type="file" id="imageInput" accept="image/*" />
+  <br />
+  <button onclick="uploadImage()">예측 시작!</button>
+
+  <div id="result"></div>
+
+  <script>
+    function uploadImage() {
+      const input = document.getElementById("imageInput");
+      const file = input.files[0];
+
+      if (!file) {
+        alert("이미지를 먼저 선택해주세요!");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("image", file);
+
+      fetch("http://127.0.0.1:5000/image-to-smiles", {
+        method: "POST",
+        body: formData,
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          if (data.error) {
+            document.getElementById("result").innerHTML =
+              `<p style="color:red;">⚠️ 오류: ${data.error}</p>`;
+          } else {
+            document.getElementById("result").innerHTML = `
+              <p><strong>SMILES:</strong> ${data.smiles}</p>
+              <p><strong>예측된 IC₅₀:</strong> ${parseFloat(data.ic50).toFixed(3)} μM</p>
+            `;
+          }
+        })
+        .catch(error => {
+          console.error("요청 실패:", error);
+          document.getElementById("result").innerHTML =
+            `<p style="color:red;">❌ 서버 연결 실패 또는 오류 발생</p>`;
+        });
+    }
+  </script>
+</body>
+</html>
