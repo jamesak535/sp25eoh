@@ -80,7 +80,7 @@ npm install
 # Edit frontend/src/config.ts and replace "YOUR_IP" with your local IP address
 
 # Start development server
-npm run dev -- --host
+npm run dev
 ```
 
 ## How to Play
