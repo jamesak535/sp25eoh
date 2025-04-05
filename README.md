@@ -4,7 +4,7 @@
 
 Design Your Cure is an interactive web-based platform that combines scientific exploration, machine learning, and gamification to accelerate drug discovery. Inspired by the challenge of combating viral threats, this project allows users to design molecular structures and receive real-time predictions of their potential effectiveness against the SARS-CoV-2 main protease.
 
-![Hero Fighting Viruses](hero-image.png)
+![Hero Fighting Viruses](game_screenshot.JPG)
 
 ### 🎮 Game Concept
 
