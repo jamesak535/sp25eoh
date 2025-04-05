@@ -1,4 +1,3 @@
-// src/lib/api.ts
 import { config } from '../config';
 
 const API_URL = config.api.baseUrl;
@@ -20,7 +19,7 @@ export async function submitToLeaderboard(nickname: string, smiles: string, ic50
   });
   return await res.json();
 }
-// 127.0.0.1
+
 export async function getLeaderboard() {
   const res = await fetch(`${API_URL}/leaderboard`);
   return await res.json();
