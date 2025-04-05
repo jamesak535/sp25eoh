@@ -48,11 +48,6 @@ In this innovative educational game, players take on the role of a molecular des
 
 ### 1. Clone the Repository
 
-```bash
-git clone <YOUR_PROJECT_GIT_URL>
-cd design-your-cure
-```
-
 ### 2. Backend Setup
 
 ```bash
