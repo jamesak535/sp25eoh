@@ -1,33 +1,124 @@
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Design Your Cure 🦠🔬
 
-First Setup:
+## Project Overview
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Design Your Cure is an interactive web-based platform that combines scientific exploration, machine learning, and gamification to accelerate drug discovery. Inspired by the challenge of combating viral threats, this project allows users to design molecular structures and receive real-time predictions of their potential effectiveness against the SARS-CoV-2 main protease.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+![Hero Fighting Viruses](hero-image.png)
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 🎮 Game Concept
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+In this innovative educational game, players take on the role of a molecular designer, battling against virus particles by creating and testing potential drug molecules. Your mission is to design the most effective molecular structures to combat viral infections.
+
+## Key Features
+
+- 🧪 Interactive Molecular Design Interface
+- 🤖 Real-time Machine Learning Predictions
+- 📊 Dynamic Leaderboard System
+- 🎯 Focus on SARS-CoV-2 Main Protease Research
+
+## Technology Stack
+
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn-ui
+
+### Backend
+- Python
+- Flask
+- Machine Learning Models (Random Forest)
+- RDKit
+- TensorFlow
+
+### Research Methodology
+- QSAR Modeling
+- Molecular Fingerprint Analysis
+- IC50 Value Prediction
+
+## Prerequisites
+
+- Node.js (v14+ recommended)
+- npm
+- Python 3.8+
+
+## Installation and Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone <YOUR_PROJECT_GIT_URL>
+cd design-your-cure
+```
+
+### 2. Backend Setup
+
+```bash
+# Create a virtual environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Start the backend server
+python backend/api.py
+```
+
+### 3. Frontend Setup
+
+```bash
+# Navigate to frontend directory
+cd frontend
+
+# Install npm dependencies
+npm install
+
+# Replace IP configuration
+# Edit frontend/src/config.ts and replace "YOUR_IP" with your local IP address
+
+# Start development server
+npm run dev -- --host
+```
+
+## How to Play
+
+1. Open the web application
+2. Design your molecular structure
+3. Submit your molecule
+4. Receive instant IC50 prediction
+5. Compare your results on the leaderboard
+6. Iterate and improve your designs
+
+## Hosting the Game
+
+To host the game on your local network:
+
+1. Replace the IP address in `frontend/src/config.ts` with your machine's IP address
+
+2. Start the backend API:
+```bash
+python backend/api.py
+```
+
+3. Start the frontend development server:
+```bash
+cd frontend
 npm run dev
 ```
 
-How to HOST the game:
-1. Make sure the replace "YOUR_IP" in frontend/src/config.ts with your ip address
-2. run "python backend/api.py"
-3. run "cd frontend && npm run dev -- --host"
+## Research Impact
 
+This project demonstrates how machine learning and interactive platforms can:
+- Accelerate drug discovery
+- Provide accessible scientific exploration
+- Engage users in cutting-edge research
 
-## What technologies are used for this project?
+## Future Improvements
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Expand to more protein targets
+- Integrate deep learning models
+- Enhance prediction accuracy
+- Broaden molecular design capabilities
