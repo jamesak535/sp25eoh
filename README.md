@@ -8,7 +8,7 @@ Design Your Cure is an interactive web-based platform that combines scientific e
 
 ### 🎮 Game Concept
 
-In this innovative educational game, players take on the role of a molecular designer, battling against virus particles by creating and testing potential drug molecules. Your mission is to design the most effective molecular structures to combat viral infections.
+In this innovative educational game, players take on the role of a molecular designer, battling against virus by creating and testing potential drug molecules. Your mission is to design the most effective molecular structures to combat the virus.
 
 ## Key Features
 
